@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 314, 314">
+  <g id="Layer_1" transform="translate(-140.638, -378.511)">
+    <g>
+      <path d="M297.638,691.511 C211.482,691.511 141.638,621.667 141.638,535.511 C141.638,449.355 211.482,379.511 297.638,379.511 C383.794,379.511 453.638,449.355 453.638,535.511 C453.638,621.667 383.794,691.511 297.638,691.511" fill="#EDEDED"/>
+      <path d="M297.638,691.511 C211.482,691.511 141.638,621.667 141.638,535.511 C141.638,449.355 211.482,379.511 297.638,379.511 C383.794,379.511 453.638,449.355 453.638,535.511 C453.638,621.667 383.794,691.511 297.638,691.511 z" fill-opacity="0" stroke="#292929" stroke-width="1"/>
+      <path d="M297.638,691.511 C237.439,691.511 188.638,642.71 188.638,582.511 C188.638,522.312 237.439,473.511 297.638,473.511 C357.837,473.511 406.638,522.312 406.638,582.511 C406.638,642.71 357.837,691.511 297.638,691.511" fill="#DDDDDD"/>
+      <path d="M297.638,691.511 C237.439,691.511 188.638,642.71 188.638,582.511 C188.638,522.312 237.439,473.511 297.638,473.511 C357.837,473.511 406.638,522.312 406.638,582.511 C406.638,642.71 357.837,691.511 297.638,691.511 z" fill-opacity="0" stroke="#292929" stroke-width="1"/>
+      <path d="M297.638,691.511 C261.187,691.511 231.638,661.962 231.638,625.511 C231.638,589.06 261.187,559.511 297.638,559.511 C334.089,559.511 363.638,589.06 363.638,625.511 C363.638,661.962 334.089,691.511 297.638,691.511" fill="#CCCCCB"/>
+      <path d="M297.638,691.511 C261.187,691.511 231.638,661.962 231.638,625.511 C231.638,589.06 261.187,559.511 297.638,559.511 C334.089,559.511 363.638,589.06 363.638,625.511 C363.638,661.962 334.089,691.511 297.638,691.511 z" fill-opacity="0" stroke="#292929" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, -0, 1, 297.138, 629.011)" text-anchor="middle">
+      <tspan x="0" y="3" font-family="'e-Ukraine', 'Atkinson Hyperlegible Next', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="#292929">Доступність</tspan>
+    </text>
+    <text transform="matrix(1, 0, -0, 1, 297.146, 530.019)" text-anchor="middle">
+      <tspan x="0" y="-6" font-family="'e-Ukraine', 'Atkinson Hyperlegible Next', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="#292929">Зручність</tspan>
+      <tspan x="0" y="12" font-family="'e-Ukraine', 'Atkinson Hyperlegible Next', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="#292929">використання</tspan>
+    </text>
+    <text transform="matrix(1, 0, -0, 1, 297.146, 436.019)" text-anchor="middle">
+      <tspan x="0" y="3" font-family="'e-Ukraine', 'Atkinson Hyperlegible Next', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="#292929">Універсальний дизайн</tspan>
+    </text>
+  </g>
+</svg>

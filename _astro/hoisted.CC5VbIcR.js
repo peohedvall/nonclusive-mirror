@@ -1,0 +1,1 @@
+import"./hoisted.DvNgFwwt.js";import"./hoisted.C6aM7iiL.js";(function(){const e=document.querySelector("[data-rail-current]"),t=document.querySelector(".section-page .head");if(!e||!t)return;new IntersectionObserver(o=>{o.forEach(r=>{e.classList.toggle("is-visible",!r.isIntersecting)})},{rootMargin:"-80px 0px 0px 0px",threshold:0}).observe(t)})();

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="384.255" height="186.658" viewBox="0, 0, 384.255, 186.658">
+  <g id="Layer_1" transform="translate(-185.343, -201.483)">
+    <g>
+      <g>
+        <path d="M233.276,372.693 C345.212,371.234 318.96,274.248 377.035,274.474 C435.11,274.248 408.858,371.234 520.793,372.693" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+        <path d="M200.488,372.693 L555.988,372.693" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <path d="M282.226,256.018 L282.226,387.642" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M472.365,256.018 L472.365,387.642" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <text transform="matrix(1, 0, 0, 1, 377.454, 327.295)">
+        <tspan x="-15.165" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">Most </tspan>
+        <tspan x="-32.507" y="10.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">individuals</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 530.228, 327.295)">
+        <tspan x="-39.37" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">Some </tspan>
+        <tspan x="-39.37" y="10.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">individuals</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 224.714, 327.295)">
+        <tspan x="6.142" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">Some </tspan>
+        <tspan x="-25.642" y="10.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">individuals</tspan>
+      </text>
+      <g>
+        <path d="M232.708,281.474 L264.568,281.474" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+        <path d="M232.708,278.474 L224.708,281.474 L232.708,284.474 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+      <g>
+        <path d="M523.201,281.474 L491.341,281.474" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+        <path d="M523.201,284.474 L531.201,281.474 L523.201,278.474 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+    </g>
+    <g>
+      <path d="M206.488,229.766 L549.988,229.766" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M206.488,229.766 L200.488,229.766 M200.488,224.766 L200.488,234.766" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      <path d="M549.988,229.766 L555.988,229.766 M555.988,234.766 L555.988,224.766" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 377.471, 216.983)">
+      <tspan x="-86.326" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">The whole population, "All"</tspan>
+    </text>
+  </g>
+</svg>

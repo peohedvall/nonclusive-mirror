@@ -1,0 +1,676 @@
+/* =========================================================================
+   Nonclusive by Design — accessibility-first design system
+   colors_and_type.css — v3
+
+   THESIS
+   ------
+   Accessibility is not a layer added to this system. It is the system.
+   Every token is chosen because it removes a barrier. Every pairing is
+   documented with its WCAG contrast ratio so designers never have to guess.
+
+   RULES THE SYSTEM ENFORCES
+   -------------------------
+   1. Body text pairs meet WCAG 2.2 AAA (7:1). UI text meets AA+ (4.5:1 minimum).
+   2. No italic display type. Italics reduce legibility for dyslexic readers.
+      Emphasis is rendered as weight + color, never slant.
+   3. No font below 16px. Caption floor is 14px, body floor is 18px (1.125rem).
+   4. Line height ≥ 1.5 for body, ≥ 1.2 for display. Measure ≤ 72ch.
+   5. Focus is a visible, 3-px, high-contrast ring. Never removed.
+   6. Hit targets ≥ 44 × 44 CSS px (WCAG 2.5.8 AAA / 2.2 AA).
+   7. All animation respects prefers-reduced-motion.
+   8. Color is never the sole carrier of meaning — always paired with
+      shape, weight, icon, or text.
+   9. Text uses rem so zoom never breaks layout.
+   ========================================================================= */
+
+
+/* ---------- FONTS --------------------------------------------------------
+   One face does the heavy lifting: Atkinson Hyperlegible Next, the newer
+   superset of Atkinson Hyperlegible, engineered by the Braille Institute
+   specifically for low-vision readers. Distinct letterforms on the pairs
+   that commonly fail (I/l/1, O/0, rn/m, a/o). Works as UI and as display.
+
+   Served locally from ./fonts/ — full seven-weight range (200–800) plus
+   matching italics. JetBrains Mono still comes from Google Fonts.
+
+   There is no italic face in the system by convention. Emphasis = weight +
+   color. Italic files are declared so authors can opt in for direct
+   quotations, foreign words, or citations where the non-italic convention
+   would be misleading.
+--------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+/* Atkinson Hyperlegible Next — 200 / 300 / 400 / 500 / 600 / 700 / 800 */
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 200;
+  src: url('/fonts/AtkinsonHyperlegibleNext-ExtraLight.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 200;
+  src: url('/fonts/AtkinsonHyperlegibleNext-ExtraLightItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 300;
+  src: url('/fonts/AtkinsonHyperlegibleNext-Light.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 300;
+  src: url('/fonts/AtkinsonHyperlegibleNext-LightItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 400;
+  src: url('/fonts/AtkinsonHyperlegibleNext-Regular.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 400;
+  src: url('/fonts/AtkinsonHyperlegibleNext-RegularItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 500;
+  src: url('/fonts/AtkinsonHyperlegibleNext-Medium.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 500;
+  src: url('/fonts/AtkinsonHyperlegibleNext-MediumItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 600;
+  src: url('/fonts/AtkinsonHyperlegibleNext-SemiBold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 600;
+  src: url('/fonts/AtkinsonHyperlegibleNext-SemiBoldItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 700;
+  src: url('/fonts/AtkinsonHyperlegibleNext-Bold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 700;
+  src: url('/fonts/AtkinsonHyperlegibleNext-BoldItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: normal; font-weight: 800;
+  src: url('/fonts/AtkinsonHyperlegibleNext-ExtraBold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next'; font-style: italic; font-weight: 800;
+  src: url('/fonts/AtkinsonHyperlegibleNext-ExtraBoldItalic.otf') format('opentype'); font-display: swap; }
+
+/* e-Ukraine — 100 / 200 / 300 / 400 / 500 / 700. The Ukrainian state typeface
+   (Ministry of Digital Transformation, designed by Dmytro Rastvortsev), used on
+   Ukrainian pages because Atkinson Hyperlegible Next has no Cyrillic. Ukrainian
+   letter forms (ї, є, ґ) drawn by a Ukrainian designer. No italic, like Atkinson.
+   600 and 800 resolve to Bold (700). */
+@font-face { font-family: 'e-Ukraine'; font-style: normal; font-weight: 100;
+  src: url('/fonts/e-Ukraine-Thin.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'e-Ukraine'; font-style: normal; font-weight: 200;
+  src: url('/fonts/e-Ukraine-UltraLight.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'e-Ukraine'; font-style: normal; font-weight: 300;
+  src: url('/fonts/e-Ukraine-Light.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'e-Ukraine'; font-style: normal; font-weight: 400;
+  src: url('/fonts/e-Ukraine-Regular.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'e-Ukraine'; font-style: normal; font-weight: 500;
+  src: url('/fonts/e-Ukraine-Medium.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'e-Ukraine'; font-style: normal; font-weight: 700;
+  src: url('/fonts/e-Ukraine-Bold.otf') format('opentype'); font-display: swap; }
+
+/* Ukrainian pages set the whole page in e-Ukraine, Latin letters included, so
+   each language version keeps one consistent face. Swedish and English pages
+   are untouched. */
+html[lang="uk"] {
+  --font-sans:    'e-Ukraine', 'Atkinson Hyperlegible Next',
+                  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'e-Ukraine', 'Atkinson Hyperlegible Next',
+                  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+/* ============================================================================
+   TOKENS — LIGHT (default)
+   ============================================================================
+   Paper is a faintly warm near-white (#FCFBF9), not pure white — reduces
+   glare for photosensitive readers, and avoids the halation Khalipina names
+   in her contrast posts. Pairs with Apple-near-black ink (#1D1D1F) at 16.27:1.
+   Every colour listed shows its measured AAA contrast ratio against --paper.
+   Ratios re-verified 2026-07-11 against the actual hex pairs.
+   ----------------------------------------------------------------------------*/
+:root {
+  /* ---- Surfaces ---------------------------------------------------------*/
+  /* Warm near-white system. Near-neutral grays with a slight warm cast
+     that sits well with the field photos and the hot-rose accent. Tight
+     steps between paper levels, no pure #000 / #fff anywhere. Tone:
+     clean, minimal, editorial, accessible. History: warm-cream register
+     (FBFAF6) -> cool Apple register (FBFBFD, 2026-05-16) -> nudged back
+     "a little, little bit warmer" on PeO's call 2026-07-11, then the page
+     ground pulled back to a whisper (#FCFAF7 read too yellow; PeO same
+     day): --paper is now just one nuance off neutral while --paper-2/-3
+     (tiles, borders) keep the fuller warmth he approved. All ratios
+     recomputed; the tight pairs on --paper-2 (accent 7.04:1, ink-3
+     7.13:1) match the old cool register exactly. */
+  --paper:        #FCFBF9;   /* page ground — faintly warm near-white       */
+  --paper-2:      #F7F5F1;   /* sunken surface / zebra row — warm step      */
+  --paper-3:      #EBE7E1;   /* card border / hairline rule                 */
+  --figure-plate: #FCFBF9;   /* fixed light ground behind content images.
+                                Deliberately NOT theme-flipped: transparent
+                                diagrams (black line art) go invisible on a
+                                dark ground, so the plate stays light in
+                                dark mode too — same convention as the
+                                Quartz reader's lightbox card and the /sv
+                                video-tile pictogram. Invisible behind
+                                opaque photos, so it is safe to apply to
+                                every content <img>. (PeO, 2026-08-30.)
+                                Exception: theme-aware inline SVGs that use
+                                currentColor (e.g. the matrix figure in
+                                Tools.astro) keep a theme-flipping ground. */
+  --ink:          #1D1D1F;   /* primary text — 16.27:1 on paper (AAA)       */
+  --ink-2:        #404043;   /* secondary text — 9.99:1 on paper (AAA)      */
+  --ink-3:        #525258;   /* muted text — 7.50:1 on paper (AAA body) —
+                                darkened 2026-05-16 from #5C5C61 (was
+                                6.43:1, failed AAA body). Halation on
+                                small fonts (Khalipina) makes headroom
+                                matter here more than elsewhere.            */
+  --ink-rule:     #D6D1CA;   /* decorative rule — non-text only             */
+
+  /* ---- Brand & accent ---------------------------------------------------
+     All accent colors have a companion "-text" variant that clears AAA 7:1
+     on --paper. Use the base color for fills and large text only; use
+     -text for any body-sized text. */
+  --brand:        #153863;   /* ink-blue anchor — 11.42:1 on paper (AAA) */
+  --brand-2:      #0B2446;   /* pressed / deep anchor — 15.00:1 (AAA) */
+  --brand-soft:   #D6E0EE;   /* tinted surface — decorative */
+
+  /* Accent (hot-rose / deep magenta) — the single non-neutral colour.
+     Serves as both accent and signal: emphasis, links-on-hover, focus ring,
+     norm-critical register, status-new, and the bracket motif. */
+  --accent:       #A01655;   /* deep magenta — 7.41:1 on paper (AAA body) */
+  --accent-text:  #8A1248;   /* accent for body text — 8.98:1 (AAA) */
+  --accent-soft:  #F4D4E2;   /* tinted surface */
+
+  /* Back-compat aliases — older files may still reference --signal*. */
+  --signal:       var(--accent);
+  --signal-text:  var(--accent-text);
+  --signal-soft:  var(--accent-soft);
+
+  --highlight:    #F2D64F;   /* label-tape yellow — background only, never text */
+
+  /* ---- Semantic status --------------------------------------------------
+     Every status color is paired with a shape/icon convention in components.
+     Color alone never carries the meaning. */
+  --success:      #2A6639;   /* 6.64:1 — paired with icon (AA+ body) */
+  --success-text: #1D4B28;   /* 9.73:1 (AAA) */
+  --warn:         #8A5800;   /* 5.84:1 — paired with icon (AA body) */
+  --warn-text:    #6A4200;   /* 8.49:1 (AAA) */
+  --error:        #A01811;   /* 7.72:1 (AAA) */
+  --error-text:   #841008;   /* 9.87:1 (AAA) */
+
+  /* ---- Focus ------------------------------------------------------------
+     Two-ring focus: a paper-colored inset gap guarantees visibility on any
+     surface color, then a thick signal-colored outer ring. 3 px ring +
+     2 px offset meets WCAG 2.4.11 (focus-appearance AAA). */
+  --focus-color:  var(--signal);
+  --focus-ring:   0 0 0 2px var(--paper), 0 0 0 5px var(--focus-color);
+  --focus-ring-inverse: 0 0 0 2px var(--ink), 0 0 0 5px var(--focus-color);
+
+  /* ---- Links ------------------------------------------------------------
+     Always underlined — color is never the sole signal. Underline is thick
+     enough to survive anti-aliasing. */
+  --link:         var(--brand-2);
+  --link-hover:   var(--signal-text);
+
+  /* ================ TYPE — FLUID, REM-BASED ==========================
+     Everything uses rem so browser-zoom (200 %+) scales the whole system
+     without breaking layout. Body = 1.125rem (18 px at default root).
+     Captions = 0.875rem (14 px floor) — never smaller. */
+  --font-sans:    'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible',
+                  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible',
+                  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --t-caption:  0.875rem;     /* 14 px — minimum size anywhere in system */
+  --t-small:    1rem;         /* 16 px — minimum body size */
+  --t-body:     1.125rem;     /* 18 px — default body */
+  --t-lead:     1.375rem;     /* 22 px */
+  --t-h5:       1.125rem;
+  --t-h4:       1.375rem;
+  --t-h3:       clamp(1.5rem, 1.2rem + 1vw, 1.875rem);       /* 24 → 30 */
+  --t-h2:       clamp(1.875rem, 1.4rem + 2.2vw, 2.75rem);    /* 30 → 44 */
+  --t-h1:       clamp(2.5rem, 1.6rem + 4vw, 4.25rem);        /* 40 → 68 */
+  --t-display:  clamp(3.5rem, 2rem + 7vw, 7rem);             /* 56 → 112 */
+
+  /* Line heights — WCAG 1.4.12 says user must be able to reach 1.5 on body;
+     we ship that as the default so it's never the user's problem. */
+  --lh-body:    1.6;
+  --lh-long:    1.75;
+  --lh-snug:    1.3;
+  --lh-tight:   1.15;
+
+  /* Letter-spacing — no negative tracking on body; display uses -0.01em max
+     (tighter than that harms letterform identification). */
+  --track-caps: 0.08em;
+  --track-body: 0;
+  --track-display: -0.01em;
+
+  /* Reading measures — capped at 72ch (WCAG 1.4.8 AAA ≤ 80). */
+  --measure:    68ch;
+  --measure-s:  52ch;
+
+  /* ================ SPACING (4 px base, rem for zoom) ==================*/
+  --s-0:  0;
+  --s-1:  0.25rem;    /* 4 */
+  --s-2:  0.5rem;     /* 8 */
+  --s-3:  0.75rem;    /* 12 */
+  --s-4:  1rem;       /* 16 */
+  --s-5:  1.5rem;     /* 24 */
+  --s-6:  2rem;       /* 32 */
+  --s-7:  3rem;       /* 48 */
+  --s-8:  4rem;       /* 64 */
+  --s-9:  6rem;       /* 96 */
+  --s-10: 8rem;       /* 128 */
+
+  /* Hit target — WCAG 2.5.8 AAA requires 44 × 44. */
+  --hit: 2.75rem;     /* 44 px */
+
+  /* ================ RADII =============================================*/
+  --r-0: 0;
+  --r-1: 2px;
+  --r-2: 6px;
+  --r-3: 12px;
+  --r-4: 20px;
+  --r-pill: 999px;
+
+  /* ---- Cut-corner card -------------------------------------------------
+     Signature card shape: three soft corners + one square (bottom-left).
+     A single squared corner gives a content card a clipped, editorial
+     feel while staying inside the radius scale. Value order = TL TR BR BL.
+     Use ONLY on discrete content cards (article / project / tool cards) —
+     never on pills, buttons, inputs, avatars, or media that needs
+     symmetric rounding. This is a corner treatment, NOT the bracket motif
+     (the [ ] lockup is reserved per the brand rules). */
+  --r-card:        var(--r-3);                                 /* 12px card corner */
+  --r-card-cut:    var(--r-card) var(--r-card) var(--r-card) 0;
+  --r-card-cut-lg: var(--r-4) var(--r-4) var(--r-4) 0;         /* for --r-4 cards */
+
+  /* ================ BORDERS & SHADOWS ================================ */
+  --border-1:       1px solid var(--ink-rule);
+  --border-2:       1px solid var(--paper-3);
+  --border-strong:  2px solid var(--ink);
+
+  --shadow-1: 0 1px 0 rgba(14,21,34,.04), 0 2px 6px -2px rgba(14,21,34,.10);
+  --shadow-2: 0 2px 0 rgba(14,21,34,.04), 0 10px 24px -10px rgba(14,21,34,.18);
+  --shadow-3: 0 4px 0 rgba(14,21,34,.04), 0 28px 50px -18px rgba(14,21,34,.26);
+
+  /* ================ MOTION ===========================================
+     Short and meaningful. Any component that animates MUST swap to
+     instant under prefers-reduced-motion. The --dur-* tokens are the only
+     durations allowed in the system. */
+  --dur-instant: 0ms;
+  --dur-fast:    120ms;
+  --dur-base:    200ms;
+  --dur-slow:    360ms;
+  --ease:        cubic-bezier(.2, 0, 0, 1);
+}
+
+
+/* ============================================================================
+   DARK THEME — explicit only (opt-in). Every pair re-verified AAA.
+   ============================================================================*/
+[data-theme="dark"] {
+  /* Soft near-black, NOT pure #000. Pure black causes halation
+     (white-on-black bloom) and eye strain for many readers,
+     especially with astigmatism or low vision — contradicting
+     the accessibility-first thesis of this system. Apple uses
+     the same #1C–1D register everywhere except the OLED home
+     screen. Single register across the site: #1D1D1F matches
+     the footer and the header dark band exactly. */
+  --paper:        #1D1D1F;   /* Apple near-black, soft dark surface     */
+  --paper-2:      #2C2C2E;   /* lifted surface for sunken bands         */
+  --paper-3:      #3A3A3C;   /* borders / hairline rule                 */
+  --ink:          #F5F5F7;   /* 15.46:1 on paper (AAA)                  */
+  --ink-2:        #D1D1D6;   /* 11.06:1 (AAA)                           */
+  --ink-3:        #BBBBBF;   /* 8.79:1 on paper, 7.28:1 on paper-2 (AAA
+                                body on both) — lifted 2026-08-30 from
+                                #AEAEB2, which cleared paper (7.61:1) but
+                                failed the paper-2 card ground (6.30:1);
+                                caught by scripts/check-a11y.mjs           */
+  --ink-rule:     #48484A;   /* decorative rule, non-text               */
+
+  --brand:        #A6C7F5;   /* light ink-blue — 9.70:1 on paper (AAA) */
+  --brand-2:      #D1E0F7;   /* 12.60:1 */
+  --brand-soft:   #1E2D45;
+
+  --accent:       #F286B6;   /* 7.10:1 (AAA body) */
+  --accent-text:  #F4A3C8;   /* 8.75:1 (AAA) */
+  --accent-soft:  #3A1830;
+
+  /* Back-compat aliases — older files may still reference --signal*. */
+  --signal:       var(--accent);
+  --signal-text:  var(--accent-text);
+  --signal-soft:  var(--accent-soft);
+
+  --highlight:    #F2D64F;
+
+  --success:      #74C488;
+  --success-text: #A3DAB1;
+  --warn:         #E8B567;
+  --warn-text:    #F2CD96;
+  --error:        #F29189;
+  --error-text:   #F4B1AB;
+
+  --link:         var(--brand-2);
+  --link-hover:   var(--signal-text);
+  --focus-ring:   0 0 0 2px var(--paper), 0 0 0 5px var(--focus-color);
+
+  --shadow-1: 0 1px 0 rgba(0,0,0,.45), 0 2px 6px -2px rgba(0,0,0,.55);
+  --shadow-2: 0 2px 0 rgba(0,0,0,.45), 0 10px 24px -10px rgba(0,0,0,.65);
+  --shadow-3: 0 4px 0 rgba(0,0,0,.45), 0 28px 50px -18px rgba(0,0,0,.75);
+}
+
+
+/* ============================================================================
+   HIGH-CONTRAST MODE — Windows / forced-colors. Let the OS take over.
+   ============================================================================*/
+@media (forced-colors: active) {
+  * {
+    border-color: CanvasText !important;
+  }
+  a, .link { color: LinkText !important; }
+  :focus-visible { outline: 3px solid Highlight !important; outline-offset: 2px; }
+}
+
+
+/* ============================================================================
+   MOTION — global reduced-motion contract
+   ============================================================================*/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================================================
+   BASE — reset + typography roles
+   ============================================================================*/
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Do NOT set a fixed root font-size — let the user's browser/OS scale. */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: var(--lh-long);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Type roles ---------------------------------------------------------*/
+.t-kicker, .kicker {
+  font-family: var(--font-mono);
+  font-size: var(--t-caption);
+  font-weight: 500;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.t-display, .display {
+  font-family: var(--font-display);
+  font-size: var(--t-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-display);
+  color: var(--ink);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1, .t-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-h1);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-display);
+  color: var(--ink);
+  text-wrap: balance;
+  margin: 0 0 var(--s-5);
+}
+
+h2, .t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-h2);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-display);
+  color: var(--ink);
+  text-wrap: balance;
+  margin: var(--s-7) 0 var(--s-4);
+}
+
+h3, .t-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h3);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  margin: var(--s-6) 0 var(--s-3);
+}
+
+h4, .t-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h4);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: var(--s-5) 0 var(--s-2);
+}
+
+.t-lead, .lead {
+  font-family: var(--font-sans);
+  font-size: var(--t-lead);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  max-width: var(--measure);
+  margin: 0 0 var(--s-5);
+}
+
+.t-body, p, li {
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: var(--lh-long);
+  color: var(--ink);
+  letter-spacing: var(--track-body);
+}
+
+p { max-width: var(--measure); margin: 0 0 var(--s-4); }
+
+.t-small, small {
+  font-family: var(--font-sans);
+  font-size: var(--t-small);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.t-caption, figcaption {
+  font-family: var(--font-sans);
+  font-size: var(--t-caption);
+  line-height: 1.5;
+  color: var(--ink-3);
+  letter-spacing: 0.01em;
+}
+
+.t-mono, code, kbd, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  font-weight: 500;
+}
+
+/* Emphasis is weight + color, NOT italic. */
+strong, b, em, .t-strong {
+  font-weight: 700;
+  color: var(--ink);
+  font-style: normal;
+}
+.t-emph, .signal-word { color: var(--signal-text); font-weight: 700; }
+
+/* Block quotes — we use a rule + weight shift, not italic. */
+.t-quote, blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 1.15rem + 0.8vw, 1.875rem);
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--ink);
+  border-left: 4px solid var(--signal);
+  padding: var(--s-2) 0 var(--s-2) var(--s-5);
+  margin: var(--s-6) 0;
+  max-width: var(--measure);
+  text-wrap: balance;
+}
+.t-quote cite, blockquote cite {
+  display: block;
+  margin-top: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--t-caption);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ---------- Links — always underlined -----------------------------------*/
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease),
+              text-decoration-color var(--dur-fast) var(--ease);
+}
+a:hover { color: var(--link-hover); }
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 2px;
+}
+
+/* Skip link — first tab stop on every page. */
+.skip-link {
+  position: absolute;
+  top: var(--s-2);
+  left: var(--s-2);
+  padding: var(--s-3) var(--s-5);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--r-2);
+  transform: translateY(-200%);
+  z-index: 9999;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
+  box-shadow: var(--focus-ring);
+}
+
+/* Selection — use label-tape yellow, always with ink text (guaranteed AAA). */
+::selection { background: var(--highlight); color: var(--ink); }
+
+/* Highlight marker — background only, never text. */
+mark, .marked {
+  background: color-mix(in oklab, var(--highlight) 80%, transparent);
+  color: var(--ink);
+  padding: 0 0.25em;
+  border-radius: 2px;
+}
+
+/* Bracket motif — a norm-critical inline mark. */
+.bracketed::before { content: "[ "; color: var(--signal); font-weight: 700; }
+.bracketed::after  { content: " ]"; color: var(--signal); font-weight: 700; }
+
+/* Strike-through — protest marker; AT will announce. */
+.struck {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--signal);
+}
+
+/* Cut-corner card helper — apply to a content card's outer box element.
+   Squares the bottom-left corner while keeping the other three soft.
+   Pair -lg with cards built on --r-4. */
+.card-cut    { border-radius: var(--r-card-cut); }
+.card-cut-lg { border-radius: var(--r-card-cut-lg); }
+
+/* Hit target utility — apply to any clickable small thing. */
+.hit-target {
+  min-width: var(--hit);
+  min-height: var(--hit);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Global focus — any focusable element gets the ring by default, no excuse. */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 2px;
+}
+
+/* Visually-hidden but available to screen readers. */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+
+/* ============================================================================
+   COMPONENT UTILITIES
+   ============================================================================
+   History: the 2026-08 "come alive" pass introduced a three-role chord
+   (rose ink / tape-yellow surface / dark-band frame). PeO's 2026-08-12
+   "book/clean" pass retired two of the three legs: the tape-yellow
+   .tape-chip labels were removed everywhere ("stuck out"; content-kind
+   labels now use the quiet mono meta register in --ink-3, or nothing),
+   and the chrome went light (the two mid-page bands, softened to
+   #2C2C2E, are the only dark moments). ROSE remains the single accent:
+   text emphasis, state, action, borders-on-hover, section indices. */
+
+/* Editorial section head — strong 2px ink rule across the content
+   width, bracketed kicker on the left, running mono index on the right
+   ("03 / 08"). Numbering a long page turns the scroll into a legible
+   sequence. Pair the kicker with .kicker-bracketed / .bracketed. */
+.head-rule {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  border-top: 2px solid var(--ink);
+  padding-top: 16px;
+}
+.head-rule .kicker-bracketed { margin: 0; }
+.sec-idx {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-text);   /* 8.98:1 light / 8.75:1 dark (AAA) */
+}
+
+/* Solid primary pill — the resting primary CTA is the FULL deep rose
+   (the pale accent-soft resting chip was retired 2026-08-13: too quiet
+   once the surrounding design sharpened). Paper text on --accent
+   7.41:1; hover deepens to --accent-text 8.98:1. Dark theme flips via
+   the tokens to bright rose + near-black text (7.10:1). */
+.btn-solid-accent {
+  color: var(--paper);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-solid-accent:hover {
+  color: var(--paper);
+  background: var(--accent-text);
+  border-color: var(--accent-text);
+}
+
+/* Dark chrome bands — pattern, not a class. Header and footer are dark
+   surfaces in BOTH themes: set data-theme="dark" on the band element
+   and every token inside flips to its AAA dark counterpart (a wordmark
+   on the band picks up the favicon-chip colours for free — white word,
+   rose brackets). State language ON a dark band:
+   (single-tone, one line per element — the ring-plus-glow double
+   outline was decluttered 2026-08-14):
+   - HOVER and CLICKABLE ACTIVE = the full bright-rose chip with
+     near-black text/icon (#1D1D1F on #F286B6, 7.10:1); aria-current
+     carries the semantic difference.
+   - NON-CLICKABLE current-state marker (e.g. the active language) =
+     bold light text with a bright-rose underline (#F286B6, 5.88:1 vs
+     the band as a UI signal), no box.
+   Translucent glows alone are too pale as hover feedback on dark
+   (tried at 0.18 and 0.30 opacity; PeO rejected both, 2026-08-13). */

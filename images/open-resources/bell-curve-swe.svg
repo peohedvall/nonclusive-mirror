@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="375.99" height="187.408" viewBox="0, 0, 375.99, 187.408">
+  <g id="Layer_1" transform="translate(-191.343, -73.733)">
+    <g>
+      <path d="M239.285,245.693 C351.22,244.234 324.968,147.248 383.043,147.474 C441.118,147.248 414.866,244.234 526.802,245.693" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M229.732,245.693 L538.193,245.693" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <path d="M288.235,129.018 L288.235,260.642" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M478.374,129.018 L478.374,260.642" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <text transform="matrix(1, 0, 0, 1, 383.454, 201.295)">
+      <tspan x="-26.735" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">De flesta </tspan>
+      <tspan x="-26.728" y="10.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">individer</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 532.091, 201.295)">
+      <tspan x="-35.242" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">Några </tspan>
+      <tspan x="-35.242" y="10.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">individer</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 230.714, 201.295)">
+      <tspan x="2.529" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">Några </tspan>
+      <tspan x="-14.085" y="10.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">individer</tspan>
+    </text>
+    <g>
+      <path d="M238.716,154.474 L270.576,154.474" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M238.716,151.474 L230.716,154.474 L238.716,157.474 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+    </g>
+    <g>
+      <path d="M529.209,154.474 L497.349,154.474" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M529.209,157.474 L537.209,154.474 L529.209,151.474 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+    </g>
+    <g>
+      <path d="M235.732,98.773 L532.209,99.123" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M235.732,98.773 L229.732,98.766 M229.738,93.766 L229.727,103.766" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      <path d="M532.209,99.123 L538.209,99.13 M538.203,104.13 L538.215,94.13" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 379.244, 89.233)">
+      <tspan x="-79.112" y="-5.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#000000">Hela befolkningen, "Alla"</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="688.024" height="324" viewBox="0, 0, 688.024, 324">
+  <g id="Layer_1" transform="translate(-62, -192)">
+    <g>
+      <text transform="matrix(1, 0, 0, 1, 119.34, 491.5)">
+        <tspan x="-11.34" y="5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#000000">t</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 686.34, 491.5)">
+        <tspan x="-11.34" y="5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#000000">t</tspan>
+      </text>
+      <path d="M687.5,431.5 C373.802,431.5 223.5,355.5 118.5,218.5" fill-opacity="0" stroke="#000000" stroke-width="4"/>
+      <path d="M118.5,431.5 C432.198,431.5 582.5,355.5 687.5,218.5" fill-opacity="0" stroke="#000000" stroke-width="4"/>
+      <text transform="matrix(1, 0, 0, 1, 119.008, 205)">
+        <tspan x="-46.008" y="5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#000000">Control</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 686.012, 219.5)">
+        <tspan x="-64.012" y="-9.5" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#000000">Knowledge</tspan>
+      </text>
+      <g>
+        <path d="M81.7,444.5 L722.724,444.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+        <path d="M75.554,447.046 C74.149,445.64 74.149,443.36 75.554,441.954 C76.96,440.549 79.24,440.549 80.646,441.954 C82.051,443.36 82.051,445.64 80.646,447.046 C79.24,448.451 76.96,448.451 75.554,447.046" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+        <path d="M722.724,448.1 L732.324,444.5 L722.724,440.9 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+      </g>
+      <path d="M118.5,398.5 L118.5,475.5" fill-opacity="0" stroke="#000000" stroke-width="2" stroke-dasharray="6,4"/>
+      <path d="M687.5,398.5 L687.5,475.5" fill-opacity="0" stroke="#000000" stroke-width="2" stroke-dasharray="6,4"/>
+      <text transform="matrix(1, 0, 0, 1, 122.336, 503)">
+        <tspan x="-3.336" y="1" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#000000">1</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 691.84, 503)">
+        <tspan x="-5.84" y="1" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#000000">2</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 401.5, 483)">
+        <tspan x="-26.904" y="-2.088" font-family="FrutigerLTStd-Roman, 'Atkinson Hyperlegible Next', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#000000">Time</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

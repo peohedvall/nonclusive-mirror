@@ -1,0 +1,52 @@
+# Per-Olof Hedvall
+
+> Personal site of Per-Olof Hedvall, Professor of Design at Mid Sweden University, working on accessibility, usability, and Universal Design. The site introduces nonclusive design: design that does not begin by sorting people into those who fit and those who must be accommodated, but takes human variation as its premise. Everything here is first-hand: his own research, writing, diagrams, and field photographs.
+
+Key terms: "nonclusion" is design that resists categorising bodies and roles and comes with no presupposed limits on who it is meant for. The "I Already Belong" Matrix plots designs on two axes, Already (is it built as if I am already here?) and Belonging (does it express that I belong?). "Disablised" names being categorised as disabled. It can happen to anyone, and it happens not only in one particular situation but in and over many situations.
+
+## How-to
+
+- [How to put nonclusion to work](https://nonclusive.org/how-to): how to get started with nonclusive design depending on what you do (design, teach, write policy), three guidelines with worked examples, and the questions this site answers
+- [Design for situations](https://nonclusive.org/how-to/design-for-situations): guideline with worked examples; design for what is going on, so the design covers everyone in the situation
+- [Categorise the environment, not the body or the person](https://nonclusive.org/how-to/categorise-the-environment): guideline with worked examples; label rooms, sizes, and mechanisms rather than people
+- [Meet variation with variation](https://nonclusive.org/how-to/meet-variation-with-variation): guideline with worked examples; answer human variation with forms, heights, and routes that already contain the difference
+- [FAQ: questions readers ask](https://nonclusive.org/how-to#faq): why "nonclusion", categorisation vs real differences, accessibility signs, inclusion vs nonclusion signals, accessibility vs universal design
+
+## Key ideas
+
+- [Nonclusion](https://nonclusive.org/key-ideas/#nonclusion): the core concept, with the founding paper reference
+- [Categorisation](https://nonclusive.org/key-ideas/#categorisation): how categorisation shapes and limits Universal Design
+- [Us and them](https://nonclusive.org/key-ideas/#us-and-them): the analytical lens for reading designed environments
+- [The I Already Belong Matrix](https://nonclusive.org/posts/n9-say-i-already-belong-and-the-conditional-access-paradigm-crumbles): the newsletter edition that introduces the matrix's premise and the conditional access paradigm
+- [Benchmarking Universal Design](https://nonclusive.org/key-ideas/#benchmarking-universal-design): evaluating UD beyond compliance
+- [On Being Disablised](https://nonclusive.org/posts/n14-on-being-disablised): the newsletter edition with the collage of six wheelchair signs, on being categorised as disabled over many situations
+
+## Open resources
+
+Diagrams and one-pagers, CC BY 4.0, in English and Swedish.
+
+- [Open resources index](https://nonclusive.org/open-resources)
+- [The Bell Curve](https://nonclusive.org/open-resources/bell-curve)
+- [The AUUD circles](https://nonclusive.org/open-resources/circles): accessibility, usability, and Universal Design as conditions for participation
+- [The AUUD Matrix](https://nonclusive.org/open-resources/auud-matrix): a 3×3 matrix for evaluating accessibility, usability, and Universal Design at the output, process, and societal-impact levels; print master, evaluation form, and (after UD26, November 2026) the open dataset of workshop indicators. Stable short address: https://nonclusive.org/matrix
+- [The Collingridge dilemma](https://nonclusive.org/open-resources/collingridge)
+- [The problem with inclusion](https://nonclusive.org/open-resources/problem-with-inclusion)
+- [Photos: Red carpets](https://nonclusive.org/open-resources/red-carpets): the same welcoming gesture over stairs and on level ground
+- [Photos: Wheelchair signs from around the world](https://nonclusive.org/open-resources/wheelchair-signs)
+- [Photos: Nonclusive solutions](https://nonclusive.org/open-resources/nonclusive-solutions): benches, signs, and counters that meet variation without sorting people
+
+## Writing
+
+- [All posts](https://nonclusive.org/posts): the Nonclusive by Design newsletter editions and earlier essays, full text
+- [Now](https://nonclusive.org/now): what is in flight right now
+
+## About
+
+- [About Per-Olof Hedvall](https://nonclusive.org/about)
+- [CV and publications](https://nonclusive.org/cv)
+- [Research projects](https://nonclusive.org/projects)
+- Contact: hello@peohedvall.com
+
+## Citing
+
+The founding paper for nonclusive design: Hedvall, P.-O., Price, M., Keller, J., & Ericsson, S. (2022). Towards 3rd Generation Universal Design: Exploring Nonclusive Design. Studies in Health Technology and Informatics, 297, 85-92.

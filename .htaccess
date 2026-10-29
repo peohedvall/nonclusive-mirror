@@ -1,0 +1,118 @@
+# 301 redirects: old Ghost URLs -> new Astro paths.
+#
+# Ghost served every post at the site root (/slug/); Astro serves them
+# under /posts/. This file preserves the indexing and link equity built
+# on the old URLs (see AI-UPTAKE-AT-LAUNCH.md, "The migration risk").
+# It lives in public/ so Astro copies it into dist/ on every build and
+# it reaches the Inleed webroot with each deploy (LiteSpeed reads .htaccess).
+#
+# Targets made absolute (https://nonclusive.org/...) 2026-10-26 so that an old
+# link makes one hop whether mod_alias or mod_rewrite answers first.
+# Generated 2026-08-12 from the peohedvall_url frontmatter field of
+# every post in src/content/posts/. Uses RedirectMatch (mod_alias,
+# enabled on standard Apache shared hosting) with exact-match patterns,
+# so /old-slug and /old-slug/ both redirect and nothing else matches.
+# VERIFY AT FIRST DEPLOY: request one old URL and confirm the 301 (if
+# the host ever rejects .htaccess, the symptom is a 500 on every page:
+# remove this file from the webroot and revisit).
+#
+# Not covered (decide at cutover if they matter): Ghost tag/author
+# archive pages and /content/images/... asset URLs. The Ghost feed
+# path is covered below.
+
+# --- Clean URLs without a trailing slash (Astro trailingSlash: 'never') ---
+# Pages are built as /path/index.html. Without this block the server
+# answers /path with a 301 to /path/ (directory handling), so every
+# internal link would cost a redirect and the canonical URL (no slash)
+# would never be the one served. Verified server-side 2026-09-02.
+Options -Indexes
+DirectorySlash Off
+RewriteEngine On
+
+# --- One address: nonclusive.org (since 2026-10-26) ---
+# The site moved from peohedvall.com to nonclusive.org on 2026-10-26 (PeO's
+# decision: an address stamps a name on shared work). peohedvall.com is an
+# alias pointer on the same webroot at Inleed, so it would answer under its
+# own name; this rule sends every other hostname (peohedvall.com, www, any
+# pointer) to nonclusive.org with the path kept, one permanent redirect.
+RewriteCond %{HTTP_HOST} !^nonclusive\.org$ [NC]
+RewriteRule ^ https://nonclusive.org%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# --- Short addresses for print and QR codes (2026-10-26) ---
+# /matrix is the stable reference for the AUUD Matrix (slides, posters,
+# the open dataset after UD26). If the resource page ever moves, change
+# the target here and every printed code keeps working.
+RedirectMatch 301 ^/matrix/?$ https://nonclusive.org/open-resources/auud-matrix
+
+# --- Newsletter editions (Ghost slug differs from new slug) ---
+RedirectMatch 301 ^/nonclusive-by-design-2-why-nonclusion/?$ https://nonclusive.org/posts/n2-why-nonclusion
+RedirectMatch 301 ^/3-strategies-illustrators-and-graphic/?$ https://nonclusive.org/posts/n3-three-strategies-designers-use-to-acknowledge-diversity
+RedirectMatch 301 ^/who-carries-the-burden-when-design-fails/?$ https://nonclusive.org/posts/n4-who-carries-the-burden-when-design-fails
+RedirectMatch 301 ^/who-are-all-these-others-in-policy-texts/?$ https://nonclusive.org/posts/n5-who-are-all-these-others-in-policy-texts
+RedirectMatch 301 ^/why-do-we-grab-our-cameras-when-something/?$ https://nonclusive.org/posts/n6-why-do-we-grab-our-cameras-when-something-feels-wrong
+RedirectMatch 301 ^/how-categorisation-shapes-and-limits/?$ https://nonclusive.org/posts/n7-how-categorisation-shapes-and-limits-universal-design
+RedirectMatch 301 ^/accessibility-usability-and-universal/?$ https://nonclusive.org/posts/n8-why-getting-from-a-to-b-isn-t-enough
+RedirectMatch 301 ^/say-i-already-belong-and-the-conditional-access-paradigm-crumbles/?$ https://nonclusive.org/posts/n9-say-i-already-belong-and-the-conditional-access-paradigm-crumbles
+RedirectMatch 301 ^/universal-design-in-one-word-my-students/?$ https://nonclusive.org/posts/n10-one-word-for-universal-design
+RedirectMatch 301 ^/what-not-yet-denies-already-can-change/?$ https://nonclusive.org/posts/n11-what-not-yet-denies-already-can-change
+RedirectMatch 301 ^/nonclusive-by-design-12-vibrating-inequality-testimonial-from-an-iphone/?$ https://nonclusive.org/posts/n12-vibrating-inequality
+RedirectMatch 301 ^/what-if-universal-design-were-always-nonclusive-13/?$ https://nonclusive.org/posts/n13-what-if-universal-design-were-always-nonclusive
+RedirectMatch 301 ^/on-being-disablised-what-57-000-media-articles-say-about-society-14/?$ https://nonclusive.org/posts/n14-on-being-disablised
+RedirectMatch 301 ^/benchmarking-universal-design-are-we-looking-in-the-right-place-15/?$ https://nonclusive.org/posts/n15-benchmarking-universal-design
+RedirectMatch 301 ^/the-sign-my-mind-added-16/?$ https://nonclusive.org/posts/n16-the-sign-my-mind-added
+RedirectMatch 301 ^/spring-challenge-can-you-photograph-belonging-17/?$ https://nonclusive.org/posts/n17-spring-challenge
+RedirectMatch 301 ^/the-lazarus-door-what-inclusion-actually-is-18/?$ https://nonclusive.org/posts/n18-the-lazarus-door
+
+# --- Archived: the 2025 disablised draft redirects to its successor, #14 ---
+RedirectMatch 301 ^/on-being-disablised-what-wheelchair/?$ https://nonclusive.org/posts/n14-on-being-disablised
+
+# --- Blog posts (same slug, moved from site root to /posts/) ---
+RedirectMatch 301 ^/1-book-on-universal-design-every/?$ https://nonclusive.org/posts/1-book-on-universal-design-every
+RedirectMatch 301 ^/brutal-nudging-or-how-i-got-bruised/?$ https://nonclusive.org/posts/brutal-nudging-or-how-i-got-bruised
+RedirectMatch 301 ^/design-som-stodjer-jamlikhet-universell-utformning/?$ https://nonclusive.org/posts/design-som-stodjer-jamlikhet-universell-utformning
+RedirectMatch 301 ^/early-2000s-universal-design-books/?$ https://nonclusive.org/posts/early-2000s-universal-design-books
+RedirectMatch 301 ^/forget-norms-and-deviations-design/?$ https://nonclusive.org/posts/forget-norms-and-deviations-design
+RedirectMatch 301 ^/in-a-different-world/?$ https://nonclusive.org/posts/in-a-different-world
+RedirectMatch 301 ^/new-publication-universal-design-at-work-places/?$ https://nonclusive.org/posts/new-publication-universal-design-at-work-places
+RedirectMatch 301 ^/one-goal-three-names-why-i-dont-separate/?$ https://nonclusive.org/posts/one-goal-three-names-why-i-dont-separate
+RedirectMatch 301 ^/peekaboo-the-joke-that-showed-how/?$ https://nonclusive.org/posts/peekaboo-the-joke-that-showed-how
+RedirectMatch 301 ^/tacit-vs-explicit-accessibility/?$ https://nonclusive.org/posts/tacit-vs-explicit-accessibility
+RedirectMatch 301 ^/the-problem-with-inclusion-it-is/?$ https://nonclusive.org/posts/the-problem-with-inclusion-it-is
+RedirectMatch 301 ^/universal-design-a-shift-in-culture-keynote-lecture/?$ https://nonclusive.org/posts/universal-design-a-shift-in-culture-keynote-lecture
+RedirectMatch 301 ^/universell-utformning-en-personlig-introdoktion/?$ https://nonclusive.org/posts/universell-utformning-en-personlig-introdoktion
+RedirectMatch 301 ^/universell-utformning-vad-ar-det-och-varfor-ar-det-viktigt/?$ https://nonclusive.org/posts/universell-utformning-vad-ar-det-och-varfor-ar-det-viktigt
+
+# --- Files formerly hosted by Ghost ---
+RedirectMatch 301 ^/content/files/2026/03/Benchmarking-Universal-Design-Matrix-v01-260303\.docx$ https://nonclusive.org/files/benchmarking-universal-design-matrix-v01-260303.docx
+
+# --- Removed pages (2026-09-03): Apps & gear retired; send to About ---
+RedirectMatch 301 ^/apps-and-gear/?$ https://nonclusive.org/about
+
+# --- Ghost RSS feed path → Astro feed ---
+RedirectMatch 301 ^/rss/?$ https://nonclusive.org/rss.xml
+
+# --- Ghost sitemap family → Astro's sitemap index (2026-09-08) ---
+# Six days after launch the logs showed bingbot and others still
+# requesting Ghost's /sitemap.xml, /sitemap-pages.xml, /sitemap-posts.xml,
+# /sitemap-authors.xml and the WordPress-style /sitemap_index.xml (60
+# requests, all 404). Astro builds /sitemap-index.xml + /sitemap-0.xml.
+RedirectMatch 301 ^/sitemap(_index|-pages|-posts|-authors|-tags)?\.xml$ https://nonclusive.org/sitemap-index.xml
+
+# --- Ghost author archive → About (2026-09-08; 43 requests in the logs) ---
+RedirectMatch 301 ^/author/peohedvall(/.*)?$ https://nonclusive.org/about
+
+# --- Ghost leftovers Googlebot still asked for (2026-09-12; Search
+# Console listed 3 "Not found" pages, the logs show these paths) ---
+RedirectMatch 301 ^/home/?$ https://nonclusive.org/
+RedirectMatch 301 ^/page/[0-9]+/?$ https://nonclusive.org/posts
+RedirectMatch 301 ^/tag/[^/]+(/page/[0-9]+)?/?$ https://nonclusive.org/posts
+RedirectMatch 301 ^/free-resources(-[0-9]+)?/?$ https://nonclusive.org/open-resources
+# Ghost's member sign-in page has no successor: 410 tells Google to drop it.
+RedirectMatch 410 ^/signin/?$
+
+# --- 404: serve the designed page (Astro builds /404.html) ---
+ErrorDocument 404 /404.html

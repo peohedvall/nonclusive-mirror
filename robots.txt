@@ -1,0 +1,45 @@
+# nonclusive.org (formerly peohedvall.com; the old name redirects here)
+# All crawlers are welcome, including AI crawlers: this site is meant to
+# be read, cited, and learned from. See also /llms.txt.
+
+User-agent: *
+Allow: /
+
+# Explicit welcome for AI training and AI retrieval crawlers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://mirror.nonclusive.org/sitemap-index.xml
